@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="touristic"
+    targetNamespace="http://tempuri.org/touristic.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/touristic.xsd"
+    xmlns:mstns="http://tempuri.org/touristic.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+  <xs:element name="tourist-voucher">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="type" type="xs:string"></xs:element>
+        <xs:element name="country" type="xs:string"></xs:element>
+        <xs:element name="days-number" type="xs:int"></xs:element>
+        <xs:element name="nights-number" type="xs:int"></xs:element>
+        <xs:element name="transport" type="transport"></xs:element>
+        <xs:element name="hotel-characteristic">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="stars" type="xs:int"></xs:element>
+              <xs:element name="food-incl" type="hotel-food"></xs:element>
+              <xs:element name="room-type" type="xs:string"></xs:element>
+              <xs:element name="additional">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="room-incl" maxOccurs="unbounded" type="xs:string"></xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="services-incl">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="service" maxOccurs="unbounded" type="xs:string"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="cost" type="xs:double"></xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID"></xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="transport" final="restriction" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="air" />
+            <xs:enumeration value="railway" />
+            <xs:enumeration value="auto" />
+            <xs:enumeration value="ship" />
+        </xs:restriction>
+    </xs:simpleType>
+   <xs:simpleType name="hotel-food" final="restriction" >
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="no" />
+            <xs:enumeration value="HB" />
+            <xs:enumeration value="BB" />
+            <xs:enumeration value="AI" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="stars" >
+        <xs:restriction base="xs:int">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

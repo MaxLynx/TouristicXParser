@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tourist-voucher id="ID-1234">
+  <type>relaxation</type>
+  <country>Egypt</country>
+  <days-number>5</days-number>
+  <nights-number>4</nights-number>
+  <transport>air</transport>
+  <hotel-characteristic>
+    <stars>4</stars>
+    <food-incl>HB</food-incl>
+    <room-type>1-person</room-type>
+    <additional>
+      <room-incl>TV</room-incl>
+      <room-incl>fridge</room-incl>
+    </additional>
+  </hotel-characteristic>
+  <services-incl>
+    <service>spa with crocodiles</service>
+    <service>piramides visiting</service>
+  </services-incl>
+  <cost>8000</cost>
+</tourist-voucher>
